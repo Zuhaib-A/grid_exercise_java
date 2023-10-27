@@ -29,10 +29,9 @@ class Grid {
     }
 
     public ArrayList<ArrayList<GridObject>> createGrid(int gridSize, Player player) {
-
         Random randomGen = new Random();
-        int treasurePosI = randomGen.nextInt(gridSize);
-        int treasurePosJ = randomGen.nextInt(gridSize);
+        treasurePosI = randomGen.nextInt(gridSize);
+        treasurePosJ = randomGen.nextInt(gridSize);
 
         int initialPlayerPosI;
         int initialPlayerPosJ;
@@ -40,7 +39,7 @@ class Grid {
         do {
             initialPlayerPosI = randomGen.nextInt(gridSize);
             initialPlayerPosJ = randomGen.nextInt(gridSize);
-        } while (initialPlayerPosI == treasurePosI && initialPlayerPosJ == treasurePosJ);
+        } while ((initialPlayerPosI == treasurePosI && initialPlayerPosJ == treasurePosJ));
 
         ArrayList<ArrayList<GridObject>> mapGrid = new ArrayList<>();
         for (int i = 0; i < gridSize; i++) {
